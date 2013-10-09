@@ -25,6 +25,9 @@ function getData (isbn, callback) {
   request({
       url: ENDPOINT + isbn,
       json: true,
+      headers: {
+        'User-Agent': 'foruli-aberprimo [dog2]'
+      }
     }, function ( error, response, data ) {
       if (error || data.error) { callback(null) }
       callback(data)
