@@ -32,4 +32,36 @@ function getData (isbn, callback) {
   )
 }
 
-module.exports = lookup
+function translate (place) {
+  switch (place) {
+    case "ABERUCLP":
+      return "Centre for Legal Practice"
+    case "ABERUCPR":
+      return "Centre for Performance Research"
+    case "ABERUEXS":
+      return "External Store"
+    case "ABERUHOL":
+      return "Hugh Owen Library"
+    case "ABERULAW":
+      return "Hugh Owen Library: Law Library"
+    case "ABERUOCL":
+      return "Old College Library"
+    case "ABERUPSL":
+      return "Physical Sciences Library"
+    case "ABERUSGO":
+      return "Stapledon Gogerddan"
+    case "ABERUSOA":
+      return "School of Art"
+    case "ABERUTPL":
+      return "Thomas Parry Library"
+    case "ABERUWWW":
+      return "Electronic"
+    default:
+      return null
+  }
+}
+
+module.exports = {
+  get: lookup,
+  translate: translate
+}
